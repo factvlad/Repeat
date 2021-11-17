@@ -1,10 +1,27 @@
 // Task 1.
 // Выведите в консоль ваше имя. Напоминаю - в ходе работы, консоль открыта всегда!
 
-console.log("Vlad");
+// console.log("Vlad");
 
-// Task 2.
-// Выведите в консоль номер месяца в котором вы родились. Изучите чем отличается вывод числа и строки.
+// function func(x) {
+//     console.log(typeof x);
+//     console.log(arguments.length);
+// }
+// func();
+// func("1", "2", "3");
+
+var num = 2;
+
+function func(num) {
+    var num;
+    console.log(num);
+    num = 5;
+}
+
+func(10)
+console.log(num)
+    // Task 2.
+    // Выведите в консоль номер месяца в котором вы родились. Изучите чем отличается вывод числа и строки.
 
 console.log("12.06.1992");
 
@@ -129,5 +146,5 @@ console.log(out19);
 // Task 20
 // Получите div.out-20 в переменную out20. C помощью textContent запишите в него строку '<h2>Hi</h2>'. Изучите результат. Посмотрите как этот вывод отличается от вывода в 10 task.
 
-let out20 = document.querySelector('.out-20');
-out20.textContent = '<h2>Hi</h2>';
+let out20 = document.querySelector(".out-20");
+out20.textContent = "<h2>Hi</h2>";
