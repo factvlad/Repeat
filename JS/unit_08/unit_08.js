@@ -200,8 +200,18 @@ document.querySelector(".b-9").onclick = t9;
 // Кнопка .b-10 запускает функцию t10. Функция должна выводить в .out-10 четные годы от 1950 до 1966 включительно.
 // Разделитель знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {}
+function t10() {
+    let div = document.querySelector(".out-10");
+    let out = "";
 
+    let i = 1950;
+    while (i <= 1966) {
+        out += `${i} `;
+        i += 2;
+    }
+
+    div.innerHTML = out;
+}
 document.querySelector(".b-10").onclick = t10;
 
 //  Task 11
@@ -212,7 +222,19 @@ document.querySelector(".b-10").onclick = t10;
 //     В результате должно получиться так:
 //     one_3_4_two_
 
-function t11() {}
+function t11() {
+    let div = document.querySelectorAll(".div-11");
+    let div11 = document.querySelector(".out-11");
+    let out = "";
+
+    let i = 0;
+    while (i < div.length) {
+        out += `${div[i].innerHTML}_`;
+        i++;
+    }
+
+    div11.innerHTML = out;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
@@ -222,7 +244,16 @@ document.querySelector(".b-11").onclick = t11;
 // перебрать их с помощью цикла  while. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = 'orange'
 
-function t12() {}
+function t12() {
+    let div = document.querySelectorAll(".div-12");
+    let out = "";
+
+    let i = 0;
+    while (i < div.length) {
+        out += `${(div[i].style.background = "orange")}`;
+        i++;
+    }
+}
 
 document.querySelector(".b-12").onclick = t12;
 
@@ -232,7 +263,15 @@ document.querySelector(".b-12").onclick = t12;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
-function t13() {}
+function t13() {
+    let inp = document.querySelectorAll(".i-13");
+
+    let i = 0;
+    while (i < inp.length) {
+        inp[i].value = i + 1;
+        i++;
+    }
+}
 
 document.querySelector(".b-13").onclick = t13;
 
@@ -242,7 +281,18 @@ document.querySelector(".b-13").onclick = t13;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // вывести в .out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-function t14() {}
+function t14() {
+    let inp = document.querySelectorAll(".i-14");
+    let div = document.querySelector(".out-14");
+
+    let i = 0;
+    while (i < inp.length) {
+        if (inp[i].checked) {
+            div.innerHTML = inp[i].value;
+        }
+        i++;
+    }
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -251,6 +301,22 @@ document.querySelector(".b-14").onclick = t14;
 // 77_88_99_77_88_99_77_88_99_
 // Для вывода использовать цикл  while. Разделитель подчеркивание.
 
-function t15() {}
+function t15() {
+    let div = document.querySelector(".out-15");
+    let out = "";
+
+    let k = 0;
+
+    while (k < 3) {
+        let i = 77;
+        while (i <= 99) {
+            out += `${i}_`;
+            i += 11;
+        }
+
+        k++;
+    }
+    div.innerHTML = out;
+}
 
 document.querySelector(".b-15").onclick = t15;
