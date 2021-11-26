@@ -13,7 +13,7 @@ let d1 = [33, "best", 66, "best"];
 
 function f1() {
     let inp = document.querySelector(".i-1").value;
-    d1.push(inp);
+    d1[d1.length] = inp;
     showArr(".out-1", d1);
 }
 
@@ -24,7 +24,9 @@ document.querySelector(".b-1").onclick = f1;
 // функция выполняется при нажатии кнопки b-2
 
 function f2() {
-    showArr(".out-2", d1);
+    d1.pop();
+    // showArr(".out-2", d1);
+    document.querySelector(".out-2").innerHTML = d1;
 }
 
 document.querySelector(".b-2").onclick = f2;
@@ -34,7 +36,9 @@ document.querySelector(".b-2").onclick = f2;
 // функция выполняется при нажатии кнопки b-3
 
 function f3() {
-    showArr(".out-3", d1);
+    d1.shift();
+    // showArr(".out-3", d1);
+    document.querySelector(".out-3").innerHTML = d1;
 }
 
 document.querySelector(".b-3").onclick = f3;
@@ -44,6 +48,8 @@ document.querySelector(".b-3").onclick = f3;
 // функция выполняется при нажатии кнопки b-4
 
 function f4() {
+    let inp = document.querySelector(".i-4").value;
+    d1.push(inp);
     showArr(".out-4", d1);
 }
 
@@ -54,6 +60,8 @@ document.querySelector(".b-4").onclick = f4;
 // функция выполняется при нажатии кнопки b-5
 
 function f5() {
+    let inp = document.querySelector(".i-5").value;
+    d1.unshift(inp);
     showArr(".out-5", d1);
 }
 
@@ -68,6 +76,8 @@ document.querySelector(".b-5").onclick = f5;
 let d6 = ["test", 5, 12];
 
 function f6() {
+    let inp = document.querySelector(".i-6").value;
+    d6[d6.length] = inp;
     showArr(".out-6", d6);
 }
 
@@ -82,6 +92,14 @@ document.querySelector(".b-6").onclick = f6;
 let d7 = ["china", "india", "brazil", "japan", "egypt"];
 
 function f7() {
+    // d7.length = d7.length - 1;
+
+    let copy = [];
+    for (i = 0; i < d7.length - 1; i++) {
+        copy[copy.length] = d7[i];
+    }
+
+    d7 = copy;
     showArr(".out-7", d7);
 }
 
@@ -96,6 +114,13 @@ document.querySelector(".b-7").onclick = f7;
 let d8 = [2, "4", 12, 67, "hello"];
 
 function f8() {
+    let copy = [];
+    copy[0] = document.querySelector(".i-8").value;
+    for (i = 0; i < d8.length; i++) {
+        copy[copy.length] = d8[i];
+    }
+
+    d8 = copy;
     showArr(".out-8", d8);
 }
 
